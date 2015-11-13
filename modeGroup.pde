@@ -288,11 +288,10 @@ int getColor(int v) {
 
 DropdownList buildAccSensDropdown() {
   DropdownList dd = cp5.addDropdownList("accSens");
-  dd.setBackgroundColor(color(0));
   dd.setItemHeight(20);
   dd.setBarHeight(15);
   for (int j = 0; j < 3; j++) {
-    dd.addItem(getAccSensName(j), j);
+    dd.addItem(accel_sens[j], j);
   }
   dd.setColorBackground(color(60));
   dd.setColorActive(color(255, 128));
@@ -302,13 +301,11 @@ DropdownList buildAccSensDropdown() {
 
 DropdownList buildAccModeDropdown() {
   DropdownList dd = cp5.addDropdownList("accMode");
-  dd.setBackgroundColor(color(200));
   dd.setItemHeight(20);
   dd.setBarHeight(15);
   for (int j = 0; j < 5; j++) {
-    dd.addItem(getAccModeName(j), j);
+    dd.addItem(accel_mode[j], j);
   }
-  dd.setColorBackground(color(60));
   dd.setColorActive(color(255, 128));
   dd.close();
   return dd;
@@ -320,7 +317,7 @@ DropdownList buildPatternDropdown(int var) {
   dd.setItemHeight(20);
   dd.setBarHeight(15);
   for (int j = 0; j < 48; j++) {
-    dd.addItem(getPatternName(var, j), j);
+    dd.addItem("Pattern " + var + ": " + pattern_names[j], j);
   }
   dd.setColorBackground(color(60));
   dd.setColorActive(color(255, 128));
